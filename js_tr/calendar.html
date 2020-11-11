@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <form>
+            <input type="number"  v-model="year"　placeholder="">年
+            <p>{{year}}</p>
+            <input type="number"  v-model="month">月
+            <p>{{month}}</p>
+            <input type="number"  v-model="day">日
+            <p>{{day}}</p>
+            <input type="button" v-on:click="getAgg"value="年齢の算出">
+            <!-- <input type="button" v-on:click="getAgg"> -->
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="calendar.js"></script>
+</body>
+</html>
