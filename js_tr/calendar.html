@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+
+
+    <!-- //------------------年齢の算出-----------------// -->
     <div id="app">
         <form>
             <input type="number"  v-model="year"　placeholder="">年
@@ -16,11 +18,26 @@
             <input type="number"  v-model="day">日
             <p>{{day}}</p>
             <input type="button" v-on:click="getAgg"value="年齢の算出">
-            <!-- <input type="button" v-on:click="getAgg"> -->
+        </form>
+    </div>
+    <!-- //------------------年齢の算出-----------------// -->
+
+
+
+    <!-- //------------------閏年か判定-----------------// -->
+    <div id="app2">
+        <form>
+            <input type="number"  v-model="year">年
+            <button v-on:click.prevent="discrimination">閏年？</button>
         </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="calendar.js"></script>
+    <!-- //------------------閏年か判定-----------------// -->
+
+
+    <!-- //------------------年齢の算出-----------------// -->
+    <!-- //------------------年齢の算出-----------------// -->
 </body>
 </html>

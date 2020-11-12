@@ -1,3 +1,5 @@
+//------------------年齢の算出-----------------//
+
 var app = new Vue({
     el:"#app",
     data:{
@@ -20,7 +22,7 @@ var app = new Vue({
 
              if(todaysMonth >monthh){
                 var agg = todaysYear - yearr;
-            }else if(todaysMonth =monthh){
+            }else if(todaysMonth ===monthh){
                 if(todaysDay>=dayy){
                     var agg = todaysYear-yearr;
                 }else{
@@ -31,24 +33,40 @@ var app = new Vue({
             };
             console.log(agg);
         },
-
-        //  getAgg: function(){
-        //     if(this.todaysMonth >this.monthh){
-        //         var agg = this.todaysYear - this.yearr;
-        //     }else if(this.todaysMonth =this.monthh){
-        //         if(this.todaysDay>this.dayy){
-        //             var agg = this.todaysYear-this.yearr;
-        //         }else{
-        //             var agg = this.todaysYear-this.yearr-1;
-        //         };
-        //     }else if(this.todaysMonth <this.monthh){
-        //         var agg = this.todaysYear-this.yearr-1;
-        //     };
-        //     var agg=this.todaysYear - this.yearr;
-        //     console.log(agg);
-        // },
     }
 });
+
+//------------------年齢の算出-----------------//
+
+//------------------閏年か判定-----------------//
+var app2 = new Vue({
+
+    el:"#app2",
+
+    data:{
+        year:""
+    },
+
+    methods:{
+
+        discrimination : function (){
+            if(this.year%100===0){
+                if(this.year%400===0){
+                    console.log(true);
+                }else{
+                    console.log(false);
+                };
+            }else if(this.year%4===0){
+                console.log(true);
+            }else{
+                console.log(false);
+            };
+        }
+    },
+
+});
+//------------------閏年か判定-----------------//
+
 
 
 
