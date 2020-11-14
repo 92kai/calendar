@@ -19,17 +19,18 @@ var app = new Vue({
              var yearr = this.year;
              var monthh = this.month;
              var dayy = this.day;
-
+             
+             var agg = 6;
              if(todaysMonth >monthh){
-                var agg = todaysYear - yearr;
-            }else if(todaysMonth ===monthh){
+                agg = todaysYear - yearr;
+            }else if(todaysMonth == monthh){//===だと正常に動かない//
                 if(todaysDay>=dayy){
-                    var agg = todaysYear-yearr;
+                    agg = todaysYear-yearr;
                 }else{
-                    var agg =todaysYear-yearr-1;
+                    agg =todaysYear-yearr-1;
                 };
             }else if(todaysMonth <monthh){
-                var agg = todaysYear-yearr-1;
+                agg = todaysYear-yearr-1;
             };
             console.log(agg);
         },
