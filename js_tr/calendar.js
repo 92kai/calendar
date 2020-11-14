@@ -45,26 +45,47 @@ var app2 = new Vue({
     el:"#app2",
 
     data:{
-        year:""
+        year:"",
+        result:"",
+        arry:[],
+        newarry:[]
     },
 
     methods:{
 
-        discrimination : function (){
+        judge : function (){
             if(this.year%100===0){
                 if(this.year%400===0){
-                    console.log(true);
+                    this.result = true;
                 }else{
-                    console.log(false);
+                    this.result = false;
                 };
             }else if(this.year%4===0){
-                console.log(true);
+                this.result = true;
             }else{
-                console.log(false);
+                this.result = false;
             };
-        }
-    },
+        },
 
+        judge2 : function(){
+            this.judge();
+            console.log(this.result);
+        },
+
+
+        //--閏年の計測--//
+        count : function (){
+            for(this.year=1100;this.year<=2700;this.year++){
+                this.judge();
+                this.arry.push(this.result);
+            };
+            this.newarry = this.arry.filter(e => e==true);
+            console.log(this.newarry.length);
+        },
+        //--閏年の計測--//
+
+
+    },
 });
 //------------------閏年か判定-----------------//
 

@@ -28,17 +28,25 @@
     <div id="app2">
         <form>
             <input type="number"  v-model="year">年
-            <button v-on:click.prevent="discrimination">閏年？</button>
-        </form>
-    </div>
+            <button v-on:click.prevent="judge2">閏年？</button>
 
+    <!-- //--閏年の計測--// -->
+            <button　v-on:click.prevent="count">いくつある？</button>
+    <!-- //--閏年の計測--// -->
+        </form>
+   
+
+
+
+
+
+    </div>
+    <!-- //------------------閏年か判定-----------------// -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="calendar.js"></script>
-    <!-- //------------------閏年か判定-----------------// -->
+ 
 
 
-    <!-- //------------------閏年の計測-----------------// -->
-    
-    <!-- //------------------閏年の計測-----------------// -->
+
 </body>
 </html>
