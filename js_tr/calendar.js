@@ -54,34 +54,47 @@ var app2 = new Vue({
 
     methods:{
 
-        judge : function (){
-            if(this.year%100===0){
-                if(this.year%400===0){
-                    this.result = true;
+        judge : function (year){
+            let result = false;
+            if(year%100===0){
+                if(year%400===0){
+                    result = true;
                 }else{
-                    this.result = false;
+                    result = false;
                 };
-            }else if(this.year%4===0){
-                this.result = true;
+            }else if(year%4===0){
+                result = true;
             }else{
-                this.result = false;
+                result = false;
             };
+
+            return result;
         },
 
         judge2 : function(){
-            this.judge();
-            console.log(this.result);
+            let result =  this.judge(this.year);
+            console.log(result);
         },
 
 
         //--閏年の計測--//
         count : function (){
-            for(this.year=1100;this.year<=2700;this.year++){
-                this.judge();
-                this.arry.push(this.result);
+            // for(this.year=1100;this.year<=2700;this.year++){
+            //     this.judge();
+            //     this.arry.push(this.result);
+            // };
+            // this.newarry = this.arry.filter(e => e==true);
+            // console.log(this.newarry.length);
+
+            let count = 0;
+            for(let i=1100;i<=2700;i++){
+                if(this.judge(i)){
+                    count++;
+                };
             };
-            this.newarry = this.arry.filter(e => e==true);
-            console.log(this.newarry.length);
+            // this.year = count
+            console.log(count);
+            count=0;
         },
         //--閏年の計測--//
 
