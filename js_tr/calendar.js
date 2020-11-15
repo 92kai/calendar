@@ -20,7 +20,8 @@ var app = new Vue({
              var monthh = this.month;
              var dayy = this.day;
              
-             var agg = 6;
+             var agg = "";
+
              if(todaysMonth >monthh){
                 agg = todaysYear - yearr;
             }else if(todaysMonth == monthh){//===だと正常に動かない//
@@ -90,5 +91,77 @@ var app2 = new Vue({
 //------------------閏年か判定-----------------//
 
 
+
+// var vu = new Vue ({
+
+//     el : "#app3",
+
+//     data:{
+//         year:"",
+//         month:"",
+//         day:"",
+//         boolean:"",
+//     },
+
+//     methods : {
+//         calendar : function(year,month,day,boolean){
+
+
+//             if(year%100===0){
+//                 if(year%400===0){
+//                     boolean = true;
+//                 }else{
+//                     boolean = false;
+//                 };
+//             }else if(year%4===0){
+//                 boolean = true;
+//             }else{
+//                 boolean = false;
+//             };
+
+//             return boolean;
+//         },
+
+
+//         calendar1 : function(){
+//             var calender1 = new calendar (2000,5,5);
+//             console.log(calender1);
+//         }
+//     }
+// });
+
+
+
+//---------------Calendarオブジェクトの作成-----------------//
+function calendar (year,month,day,boolean){
+
+    this.year = year;
+    this.month = month;
+    this.day = day;
+
+    if(year%100===0){
+        if(year%400===0){
+            boolean = true;
+        }else{
+            boolean = false;
+        };
+    }else if(year%4===0){
+        boolean = true;
+    }else{
+        boolean = false;
+    };
+
+    this.boolean = boolean;
+};
+//---------------Calendarオブジェクトの作成-----------------//
+
+
+
+
+//---------------newインスタンスの作成-----------------//
+var calendar1 = new calendar(2000,10,10);
+
+console.log(calendar1);
+//---------------newインスタンスの作成-----------------//
 
 
